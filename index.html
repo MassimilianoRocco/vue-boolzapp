@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title></title>
 </head>
@@ -15,10 +17,96 @@
         <div class="upperWrap"></div>
         <div class="lowerWrap"></div>
 
+        <!-- MAIN CONTENT -->
         <div class="main_container">
-            <div class="left_container"></div>
-            <div class="right_container"></div>
 
+            <!-- LEFT CONTENT -->
+            <div class="left_container">
+                <!-- top user box -->
+                <div class="user_container">
+                    <div class="user_box">
+                        <div class="picture_box">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="">
+                        </div>
+                        <p>Sofia</p>
+                    </div>
+
+                    <div class="user_options_box">
+                        <i class="fa-solid fa-arrows-rotate" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-message" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
+                    </div>
+                </div>
+
+                <!-- Alert blue box -->
+                <div class="alert_container">
+                    <div class="alert_circle">
+                        <i class="fa-solid fa-bell-slash" style="color: #8edafc;"></i>
+                    </div>
+                    <div class="alert_text_box">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <p>Attiva notifiche desktop</p>
+                    </div>
+                </div>
+
+                <!-- Search box -->
+                <div class="search_box">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                    <input class="w3-input w3-animate-input" type="text" id="searchBar" v-model="newActivity" name="searchBar" placeholder="Cerca o inizia una nuova chat">
+                </div>
+
+                <!-- Conversations Section -->
+                <div class="conversations_list_container">
+
+                    <div class="user_card">
+                        <div class="picture_box">
+                            <img src="https://i.pravatar.cc/150?img=11
+                            " alt="">
+                        </div>
+                        <div class="friend_text_box">
+                            <div class="left_text">
+                                <p>Michele</p>
+                                <p>ultimo messaggio inviato</p>
+                            </div>
+                            <div class="right_text">
+                                <p>12.00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    
+                    
+
+                </div>
+            </div>
+
+            <!-- RIGHT CONTAINER -->
+            <div class="right_container">
+                <div class="user_container">
+                    <div class="user_box">
+                        <div class="picture_box">
+                            <img src="https://i.pravatar.cc/150?img=11
+                            " alt="">
+                        </div>
+                        <p>Michele</p>
+                    </div>
+
+                    <div class="user_options_box">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-paperclip" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
+                    </div>
+                </div>
+
+                <!-- Conversation Section -->
+                <div class="conversation_wall">
+
+                </div>
+            </div>
+            
         </div>
 
         
