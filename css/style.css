@@ -18,10 +18,16 @@
 .flex{
     display: flex;
 }
+.alignSelf_center{
+    align-self: center;
+}
 img{
     width: 80px;
     border-radius: 50px;
     max-width: 100%;
+}
+.font_size_bigger{
+    font-size: 1.2rem;
 }
 
 /*****                 ****/
@@ -208,7 +214,7 @@ img{
 } 
 
 .send_message_container>input { 
-    width: calc(100% - 20px); 
+    width: 100%;
     padding: 8px; 
     margin: 10px; 
     border: 1px solid #ddd; 
@@ -216,11 +222,28 @@ img{
 } 
 
 .send_message_container>button { 
+    width: 50px;
     padding: 8px; 
-    margin: 10px; 
+    align-self: center;
     background-color: #4CAF50; 
     color: #fff; 
     border: none; 
     border-radius: 5px; 
     cursor: pointer; 
 } 
+
+.send_message_container>i:first-child{
+    align-self: center;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    color: slategrey;
+    cursor: pointer;
+}
+.send_message_container>i:last-child{
+    align-self: center;
+    width: 20px;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    color: slategrey;
+    cursor: pointer;
+}
