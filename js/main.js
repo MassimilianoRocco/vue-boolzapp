@@ -171,6 +171,9 @@ createApp({
             ],
             isActive: false,
             indexClicked:0,
+            userMessage:"",
+            apiDate:"",
+
         }
     },
     methods: {
@@ -192,6 +195,32 @@ createApp({
             else if(arrayStatus=='received'){
                 return this.contacts[this.indexClicked].avatar;
             }
+        },
+        writeMessage(indexClicked){
+
+            // USO API LUXON PER DATA CON METODI PER FORMATTARE
+            const data = luxon.DateTime.local().toString();
+            const formatData = luxon.DateTime.fromISO(data).toFormat('dd/LL/yyyy HH:mm');
+
+            let message = {
+                date: formatData,
+                message: this.userMessage,
+                status: 'sent'
+            }
+            this.contacts[indexClicked].messages.push(message);
+
+            let answer = {
+                date: formatData,
+                message: "ok",
+                status: 'received'
+            }
+            
+            //O uso l'arrow function oppure setTimeout(function(){...}.bind, 2000)
+            let timeout = setTimeout(()=>{
+                console.log(this.contacts)
+                this.contacts[indexClicked].messages.push(answer);
+            }, 2000)
+
         }
 
     },

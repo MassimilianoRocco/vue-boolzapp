@@ -105,9 +105,8 @@
                 
                     <div class="send_message_container flex"> 
                         <i class="fa-solid fa-face-smile"></i>
-                        <input type="text" 
-                            placeholder="Scrivi il tuo messaggio..."> 
-                        <button>Invia</button>
+                        <input type="text" id="writeArea" v-model="userMessage" name="writeArea" placeholder="Scrivi il tuo messaggio..."> 
+                        <button @click="writeMessage(indexClicked)">Invia</button>
                         <i class="fa-solid fa-microphone "></i> 
                     </div>       
                 </div>
@@ -126,7 +125,7 @@
 
 </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
