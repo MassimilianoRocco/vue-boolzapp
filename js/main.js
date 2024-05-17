@@ -4,7 +4,7 @@ createApp({
 
     data() {
         return {
-            contacts: [
+            user:[
                 {
                     name: 'Sofia',
                     avatar: 'https://i.pravatar.cc/150?img=5',
@@ -27,6 +27,8 @@ createApp({
                         }
                     ],
                 },
+            ],
+            contacts: [
                 {
                     name: 'Michele',
                     avatar: 'https://i.pravatar.cc/150?img=11',
@@ -168,11 +170,30 @@ createApp({
                 }
             ],
             isActive: false,
-            
+            indexClicked:0,
         }
     },
     methods: {
-       
+        setIndexClicked(index){
+            this.indexClicked = index;
+        },
+        messageSentOrReceived(arrayStatus){
+            if(arrayStatus=='sent'){
+                return 'receiver-message';
+            }
+            else if(arrayStatus=='received'){
+                return 'sender-message';
+            }
+        },
+        avatarSenderOrReceiver(arrayStatus){
+            if(arrayStatus=='sent'){
+                return this.user[0].avatar;
+            }
+            else if(arrayStatus=='received'){
+                return this.contacts[this.indexClicked].avatar;
+            }
+        }
+
     },
     mounted() {
         

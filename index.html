@@ -26,9 +26,9 @@
                 <div class="user_container">
                     <div class="user_box">
                         <div class="picture_box">
-                            <img :src="contacts[0].avatar" alt="">
+                            <img :src="user[0].avatar" alt="">
                         </div>
-                        <p>{{contacts[0].name}}</p>
+                        <p>{{user[0].name}}</p>
                     </div>
 
                     <div class="user_options_box">
@@ -58,7 +58,7 @@
                 <!-- Conversations Section -->
                 <div class="conversations_list_container">
 
-                    <div v-for="contact, index of contacts" :class="{ 'bg_grey': isActive === index }" class="user_card" @click="(isActive = index)">
+                    <div v-for="contact, index of contacts" :class="{ 'bg_grey': isActive === index }" class="user_card" @click="(isActive = index), setIndexClicked(index)">
                         <div class="picture_box">
                             <img :src="contact.avatar" alt="">
                         </div>
@@ -72,13 +72,6 @@
                             </div>
                         </div>
                     </div>
-
-                    
-                    
-
-                    
-                    
-
                 </div>
             </div>
 
@@ -87,10 +80,9 @@
                 <div class="user_container">
                     <div class="user_box">
                         <div class="picture_box">
-                            <img src="https://i.pravatar.cc/150?img=11
-                            " alt="">
+                            <img :src="contacts[indexClicked].avatar" alt="">
                         </div>
-                        <p>Michele</p>
+                        <p>{{contacts[indexClicked].name}}</p>
                     </div>
 
                     <div class="user_options_box">
@@ -102,26 +94,12 @@
 
                 <!-- Conversation Section -->
                 <div class="conversation_wall">
-                    <div class="message-container"> 
-                        <div class="message sender-message"> 
-                            <img src="https://i.pravatar.cc/150?img=11" alt="Sender Avatar" class="avatar"> 
-                            <span>Ciao!</span>
-                            <span class="conv_time"><br><br>12.50</span> 
-                        </div> 
-                        <div class="message receiver-message"> 
-                            <img src= "https://i.pravatar.cc/150?img=5" alt="Receiver Avatar" class="avatar"> 
-                            <span>Ciao! Come posso aiutarti oggi?</span>
-                            <span class="conv_time"><br><br>12.50</span> 
-                        </div> 
-                        <div class="message sender-message"> 
-                            <img src="https://i.pravatar.cc/150?img=11" alt="Sender Avatar" class="avatar"> 
-                            <span>Ho una domanda circa il vostro prodotto.</span>
-                            <span class="conv_time"><br><br>12.50</span> 
-                        </div> 
-                        <div class="message receiver-message"> 
-                            <img src= "https://i.pravatar.cc/150?img=5" alt="Receiver Avatar" class="avatar"> 
-                            <span>Certo, chiedi pure!</span>
-                            <span class="conv_time"><br><br>12.50</span> 
+                    <div class="message-container">                          
+                        <!-- :class="messaggio.status=='sent' ? 'sender-message': 'receiver-message'" -->
+                        <div class="message" :class="messageSentOrReceived(messaggio.status)" v-for="messaggio of contacts[indexClicked].messages">
+                            <img :src="avatarSenderOrReceiver(messaggio.status)" alt="Sender Avatar" class="avatar">
+                            <p>{{messaggio.message}}</p>
+                            <small><br><br>{{messaggio.date}}</small>
                         </div>
                     </div> 
                 
