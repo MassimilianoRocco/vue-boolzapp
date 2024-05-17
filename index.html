@@ -26,9 +26,9 @@
                 <div class="user_container">
                     <div class="user_box">
                         <div class="picture_box">
-                            <img src="https://i.pravatar.cc/150?img=5" alt="">
+                            <img :src="contacts[0].avatar" alt="">
                         </div>
-                        <p>Sofia</p>
+                        <p>{{contacts[0].name}}</p>
                     </div>
 
                     <div class="user_options_box">
@@ -58,18 +58,17 @@
                 <!-- Conversations Section -->
                 <div class="conversations_list_container">
 
-                    <div class="user_card">
+                    <div v-for="contact, index of contacts" :class="{ 'bg_grey': isActive === index }" class="user_card" @click="(isActive = index)">
                         <div class="picture_box">
-                            <img src="https://i.pravatar.cc/150?img=11
-                            " alt="">
+                            <img :src="contact.avatar" alt="">
                         </div>
                         <div class="friend_text_box">
                             <div class="left_text">
-                                <p>Michele</p>
+                                <p>{{contact.name}}</p>
                                 <p>ultimo messaggio inviato</p>
                             </div>
                             <div class="right_text">
-                                <p>12.00</p>
+                                <p>12.10</p>
                             </div>
                         </div>
                     </div>
@@ -106,19 +105,23 @@
                     <div class="message-container"> 
                         <div class="message sender-message"> 
                             <img src="https://i.pravatar.cc/150?img=11" alt="Sender Avatar" class="avatar"> 
-                            <span>Ciao!</span> 
+                            <span>Ciao!</span>
+                            <span class="conv_time"><br><br>12.50</span> 
                         </div> 
                         <div class="message receiver-message"> 
                             <img src= "https://i.pravatar.cc/150?img=5" alt="Receiver Avatar" class="avatar"> 
-                            <span>Ciao! Come posso aiutarti oggi?</span> 
+                            <span>Ciao! Come posso aiutarti oggi?</span>
+                            <span class="conv_time"><br><br>12.50</span> 
                         </div> 
                         <div class="message sender-message"> 
                             <img src="https://i.pravatar.cc/150?img=11" alt="Sender Avatar" class="avatar"> 
-                            <span>Ho una domanda circa il vostro prodotto.</span> 
+                            <span>Ho una domanda circa il vostro prodotto.</span>
+                            <span class="conv_time"><br><br>12.50</span> 
                         </div> 
                         <div class="message receiver-message"> 
                             <img src= "https://i.pravatar.cc/150?img=5" alt="Receiver Avatar" class="avatar"> 
-                            <span>Certo, chiedi pure! </span> 
+                            <span>Certo, chiedi pure!</span>
+                            <span class="conv_time"><br><br>12.50</span> 
                         </div>
                     </div> 
                 

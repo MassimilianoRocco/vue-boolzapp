@@ -30,6 +30,13 @@ img{
     font-size: 1.2rem;
 }
 
+.opacity{
+    opacity: 0.5;
+}
+.bg_grey{
+    background-color: rgb(235, 227, 227);
+}
+
 /*****                 ****/
 /***** CONTENT _STYLE  ****/
 /*****                 ****/
@@ -54,6 +61,8 @@ img{
     display: flex;
 }
 
+
+/*******  LEFT CONTAINER *******/
 .left_container{
     width: 40%;
     height: 100%;
@@ -141,9 +150,13 @@ img{
     height: 100px;
     padding: 0 1rem;
     display: flex;
+    cursor: pointer;
 }
 .picture_box{
     width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .friend_text_box{
     width: calc(100% - 100px);
@@ -162,7 +175,7 @@ img{
     color: #b1b1b1;
 }
 
-/* RIGHT CONTAINER */
+/********* RIGHT CONTAINER *********/
 .right_container{
     width: 60%;
     height: 100%;
@@ -195,7 +208,7 @@ img{
 } 
 
 .sender-message { 
-    background-color: #e0e0e0; 
+    background-color: #ffffff; 
     color: #000; 
     align-self: flex-start; 
 } 
@@ -246,4 +259,8 @@ img{
     margin: 0 10px;
     color: slategrey;
     cursor: pointer;
+}
+.conv_time{
+    font-size: 0.8rem;
+    color: rgb(213, 220, 228);
 }
