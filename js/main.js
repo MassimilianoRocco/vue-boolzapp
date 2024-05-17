@@ -172,7 +172,7 @@ createApp({
             isActive: false,
             indexClicked:0,
             userMessage:"",
-            apiDate:"",
+            searchText:"",
 
         }
     },
@@ -220,9 +220,16 @@ createApp({
                 console.log(this.contacts)
                 this.contacts[indexClicked].messages.push(answer);
             }, 2000)
+        },
 
+    },
+    computed:{
+        userList(){
+            if(this.searchText.trim().length>0){
+                return this.contacts.filter((contact)=>contact.name.toLowerCase().includes(this.searchText.trim().toLowerCase()));
+            }
+            return this.contacts;
         }
-
     },
     mounted() {
         

@@ -52,13 +52,14 @@
                 <!-- Search box -->
                 <div class="search_box">
                     <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
-                    <input class="w3-input w3-animate-input" type="text" id="searchBar" v-model="newActivity" name="searchBar" placeholder="Cerca o inizia una nuova chat">
+                    <input class="w3-input w3-animate-input" type="text" id="searchBar" v-model="searchText" name="searchBar" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
                 <!-- Conversations Section -->
                 <div class="conversations_list_container">
 
-                    <div v-for="contact, index of contacts" :class="{ 'bg_grey': isActive === index }" class="user_card" @click="(isActive = index), setIndexClicked(index)">
+                    <!-- CARD -->
+                    <div v-if="userList.length" v-for="contact, index of userList" :class="{ 'bg_grey': isActive === index }" class="user_card" @click="(isActive = index), setIndexClicked(index)">
                         <div class="picture_box">
                             <img :src="contact.avatar" alt="">
                         </div>
@@ -72,6 +73,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <div v-else class="user_card">No users found for: {{searchText}}</div>
                 </div>
             </div>
 
