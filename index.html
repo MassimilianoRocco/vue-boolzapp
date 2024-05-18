@@ -66,10 +66,10 @@
                         <div class="friend_text_box">
                             <div class="left_text">
                                 <p>{{contact.name}}</p>
-                                <p>ultimo messaggio inviato</p>
+                                <p>{{contact.messages[contact.messages.length - 1].message}}</p>
                             </div>
                             <div class="right_text">
-                                <p>12.10</p>
+                                <p>{{contact.messages[contact.messages.length - 1].date}}</p>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                             <img :src="avatarSenderOrReceiver(messaggio.status)" alt="Sender Avatar" class="avatar">
                             <p>{{messaggio.message}}</p>
                             <small><br><br>{{messaggio.date}}</small>
-                        </div>
+                        </div>  
                     </div> 
                 
                     <div class="send_message_container flex"> 

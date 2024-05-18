@@ -173,6 +173,7 @@ createApp({
             indexClicked:0,
             userMessage:"",
             searchText:"",
+            timeMessage:"",
 
         }
     },
@@ -207,6 +208,7 @@ createApp({
                 message: this.userMessage,
                 status: 'sent'
             }
+            this.timeMessage=message.date
             this.contacts[indexClicked].messages.push(message);
 
             let answer = {
