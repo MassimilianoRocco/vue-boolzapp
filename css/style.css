@@ -176,6 +176,8 @@ img{
 }
 .right_text{
     width: 10%;
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 .left_text>p:last-child{
     font-size: 0.9rem;
@@ -192,7 +194,8 @@ img{
 .conversation_wall{
     width: 100%;
     height: calc(100% - 100px);
-    background-color: #e5ddd5; 
+    background-image: url(../img/mine.jpg);
+    background-size: cover;
     overflow: auto; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -207,12 +210,26 @@ img{
 
 .message { 
     padding: 0 8px; 
+    max-width: 60%;
     margin: 1rem 2rem; 
     border-radius: 5px; 
     display: flex; 
     align-items: center; 
     position: relative;
+    flex-direction: column;
 } 
+.content-container{
+    width: 100%;
+    display: flex;
+    padding-top: 0.5rem;
+}
+.small-container{
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 3px;
+    display: flex;
+    justify-content: space-between;
+}
 
 .sender-message { 
     background-color: #ffffff; 
@@ -254,13 +271,43 @@ img{
     border-radius: 50%; 
     margin-right: 10px; 
 } 
-
-.receiver-message>small{
-    color: white;
+.receiver-message>.content-container>.avatar{
+    order: 2;
+    margin-left: 0.5rem ;
 }
-.sender-message>small{
+.receiver-message>.content-container>p{
+   order: 1;
+}
+.sender-message>.small-container{
+    align-self: flex-start;
     color: rgb(126, 126, 126);
 }
+.receiver-message>.small-container{
+    align-self: flex-end;
+    color: white;
+}
+
+.receiver-message>.small-container>p:first-child{
+    margin-right: 2rem;
+}
+.receiver-message>.small-container>p:last-child{
+    margin-right: 1.2rem;
+    cursor: pointer;
+}
+.sender-message>.small-container>p:first-child{
+    margin-left: 2rem;
+    order: 2;
+}
+.sender-message>.small-container>p:last-child{
+    margin-left: 1rem;
+    order: 1;
+    cursor: pointer;
+}
+
+.receiver-message>.small-container>.dropdown>.dropdown-toggle:empty::after {
+    color: white;
+    margin: 0;
+  }
 
 .send_message_container>input { 
     width: 100%;
