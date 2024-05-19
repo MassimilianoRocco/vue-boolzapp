@@ -175,8 +175,7 @@ createApp({
             searchText:"",
             timeMessage:"",
             newUserMessage:"",
-            toggle: true
-
+            toggle: false,
         }
     },
     methods: {
@@ -242,6 +241,7 @@ createApp({
         modifyMessage(indexClicked, index){
             this.contacts[indexClicked].messages[index].message = this.newUserMessage;
             this.newUserMessage="";
+            this.toggle = !this.toggle;
         },
     },
     computed:{
