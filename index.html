@@ -127,7 +127,7 @@
                 
                     <div class="send_message_container flex"> 
                         <i class="fa-solid fa-face-smile"></i>
-                        <input type="text" id="writeArea" v-model="userMessage" name="writeArea" placeholder="Scrivi il tuo messaggio..."> 
+                        <input v-model="userMessage" @keyup.enter="writeMessage(indexClicked)" type="text" id="writeArea" name="writeArea" placeholder="Scrivi il tuo messaggio..."> 
                         <button @click="writeMessage(indexClicked)">Invia</button>
                         <i class="fa-solid fa-microphone "></i> 
                     </div>       
