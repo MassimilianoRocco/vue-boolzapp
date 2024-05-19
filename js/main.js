@@ -178,9 +178,12 @@ createApp({
         }
     },
     methods: {
+        // *****FUNCTION TO SET/SAVE AN INDEX OF THE CARD SELECTED*****
         setIndexClicked(index){
             this.indexClicked = index;
         },
+
+        // *****FUNCTION TO DEFINE THE SENDER OR THE RECEIVER CSS CLASS*****
         messageSentOrReceived(arrayStatus){
             if(arrayStatus=='sent'){
                 return 'receiver-message';
@@ -189,6 +192,8 @@ createApp({
                 return 'sender-message';
             }
         },
+
+        // *****SET AVATAR(SENDER OR RECEIVER) FOR CONVERSATION BOX FUNCTION***** 
         avatarSenderOrReceiver(arrayStatus){
             if(arrayStatus=='sent'){
                 return this.user[0].avatar;
@@ -197,6 +202,8 @@ createApp({
                 return this.contacts[this.indexClicked].avatar;
             }
         },
+
+        // *****WRITEMESSAGE FUNCTION*****
         writeMessage(indexClicked){
 
             // USO API LUXON PER DATA CON METODI PER FORMATTARE
@@ -224,8 +231,14 @@ createApp({
             }, 2000)
         },
 
+        // *****CANCEL MESSAGE FUNCTION*****
+        cancelMessage(indexClicked, index){
+            this.contacts[indexClicked].messages.splice(index, 1);
+        },
+
     },
     computed:{
+        // ***** BIND THE SEARCH SECTION TO THE CARDS SHOW*****
         userList(){
             if(this.searchText.trim().length>0){
                 return this.contacts.filter((contact)=>contact.name.toLowerCase().includes(this.searchText.trim().toLowerCase()));

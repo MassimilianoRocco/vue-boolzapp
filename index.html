@@ -100,7 +100,7 @@
                 <div class="conversation_wall">
                     <div class="message-container">                          
                         <!-- :class="messaggio.status=='sent' ? 'sender-message': 'receiver-message'" -->
-                        <div class="message" :class="messageSentOrReceived(messaggio.status)" v-for="messaggio of contacts[indexClicked].messages">
+                        <div class="message" :class="messageSentOrReceived(messaggio.status)" v-for="messaggio,index of contacts[indexClicked].messages">
                             <div class="content-container">
                                 <img :src="avatarSenderOrReceiver(messaggio.status)" alt="Sender Avatar" class="avatar">
                                 <p>{{messaggio.message}}</p>
@@ -108,15 +108,13 @@
                             <div class="small-container">
                                 <p>{{messaggio.date}}</p>
                                 
-                                    <div class="dropdown">
+                                <div class="dropdown">
                                     <button class="btn dropdown-toggle py-0" id="my_button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     </button>
                                     <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Action</a></li>
-                                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <li><a class="dropdown-item" href="#" @click="cancelMessage(indexClicked, index)">Cancella</a></li>
                                     </ul>
-                                  </div>
+                                </div>
                                 
                             </div>
                         </div>  

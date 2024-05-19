@@ -235,12 +235,14 @@ img{
     background-color: #ffffff; 
     color: #000; 
     align-self: flex-start; 
+    box-shadow: 0 0 5px 5px #948383
 } 
 
 .receiver-message { 
     background-color: #4CAF50; 
     color: #fff; 
     align-self: flex-end; 
+    box-shadow: 0 0 5px 5px #83bd85 ;
 } 
 
 .sender-message::after{
