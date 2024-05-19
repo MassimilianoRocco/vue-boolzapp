@@ -174,6 +174,8 @@ createApp({
             userMessage:"",
             searchText:"",
             timeMessage:"",
+            newUserMessage:"",
+            toggle: true
 
         }
     },
@@ -236,6 +238,11 @@ createApp({
             this.contacts[indexClicked].messages.splice(index, 1);
         },
 
+        // *****MODIFY MESSAGE FUNCTION*****
+        modifyMessage(indexClicked, index){
+            this.contacts[indexClicked].messages[index].message = this.newUserMessage;
+            this.newUserMessage="";
+        },
     },
     computed:{
         // ***** BIND THE SEARCH SECTION TO THE CARDS SHOW*****

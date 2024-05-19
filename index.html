@@ -109,10 +109,14 @@
                                 <p>{{messaggio.date}}</p>
                                 
                                 <div class="dropdown">
-                                    <button class="btn dropdown-toggle py-0" id="my_button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn dropdown-toggle py-0" id="my_button" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#" @click="cancelMessage(indexClicked, index)">Cancella</a></li>
+                                        <li><a @click='toggle = !toggle' class="dropdown-item" href="#">Modifica</a></li>
+                                        <li v-show='toggle' class="li_modify_text">
+                                            <input v-show='toggle' v-model="newUserMessage" @keyup.enter="modifyMessage(indexClicked,index)" class="w3-input w3-animate-input modify_input" type="text" id="modifyBar" name="modifyBar">
+                                        </li>
                                     </ul>
                                 </div>
                                 
