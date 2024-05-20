@@ -217,7 +217,7 @@ createApp({
                 status: 'sent'
             }
             this.timeMessage=message.date
-            this.contacts[indexClicked].messages.push(message);
+            this.userList[indexClicked].messages.push(message);
 
             let answer = {
                 date: formatData,
@@ -228,18 +228,18 @@ createApp({
             //O uso l'arrow function oppure setTimeout(function(){...}.bind, 2000)
             let timeout = setTimeout(()=>{
                 console.log(this.contacts)
-                this.contacts[indexClicked].messages.push(answer);
+                this.userList[indexClicked].messages.push(answer);
             }, 2000)
         },
 
         // *****CANCEL MESSAGE FUNCTION*****
         cancelMessage(indexClicked, index){
-            this.contacts[indexClicked].messages.splice(index, 1);
+            this.userList[indexClicked].messages.splice(index, 1);
         },
 
         // *****MODIFY MESSAGE FUNCTION*****
         modifyMessage(indexClicked, index){
-            this.contacts[indexClicked].messages[index].message = this.newUserMessage;
+            this.userList[indexClicked].messages[index].message = this.newUserMessage;
             this.newUserMessage="";
             this.toggle = !this.toggle;
         },
