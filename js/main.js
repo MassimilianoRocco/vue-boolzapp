@@ -211,7 +211,7 @@ createApp({
             const data = luxon.DateTime.local().toString();
             const formatData = luxon.DateTime.fromISO(data).toFormat('dd/LL/yyyy HH:mm');
 
-            let message = {
+            const message = {
                 date: formatData,
                 message: this.userMessage,
                 status: 'sent'
