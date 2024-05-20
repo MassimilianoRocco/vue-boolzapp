@@ -84,9 +84,9 @@
                 <div class="user_container">
                     <div class="user_box">
                         <div class="picture_box">
-                            <img :src="contacts[indexClicked].avatar" alt="">
+                            <img :src="userList[indexClicked].avatar" alt="">
                         </div>
-                        <p>{{contacts[indexClicked].name}}</p>
+                        <p>{{userList[indexClicked].name}}</p>
                     </div>
 
                     <div class="user_options_box">
@@ -100,7 +100,7 @@
                 <div class="conversation_wall">
                     <div class="message-container">                          
                         <!-- :class="messaggio.status=='sent' ? 'sender-message': 'receiver-message'" -->
-                        <div class="message" :class="messageSentOrReceived(messaggio.status)" v-for="messaggio,index of contacts[indexClicked].messages">
+                        <div class="message" :class="messageSentOrReceived(messaggio.status)" v-for="messaggio,index of userList[indexClicked].messages">
                             <div class="content-container">
                                 <img :src="avatarSenderOrReceiver(messaggio.status)" alt="Sender Avatar" class="avatar">
                                 <p>{{messaggio.message}}</p>

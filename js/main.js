@@ -200,7 +200,7 @@ createApp({
                 return this.user[0].avatar;
             }
             else if(arrayStatus=='received'){
-                return this.contacts[this.indexClicked].avatar;
+                return this.userList[this.indexClicked].avatar;
             }
         },
 

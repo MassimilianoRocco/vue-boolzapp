@@ -410,10 +410,6 @@ img{
 
 @media screen and (max-width: 992px) {
 
-    .user_card{
-        margin-bottom: 1rem;
-    }
-
     .friend_text_box{
         width: calc(100% - 50px);
         overflow: hidden;
