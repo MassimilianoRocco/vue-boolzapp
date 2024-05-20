@@ -74,6 +74,7 @@ img{
     width: 40%;
     height: 100%;
     background-color: rgb(175, 181, 187);
+    overflow: auto;
 }
 
 .user_container{
@@ -172,10 +173,10 @@ img{
     justify-content: space-between;
 }
 .left_text{
-    width: 90%;
+    width: 70%;
 }
 .right_text{
-    width: 10%;
+    width: 30%;
     font-size: 0.9rem;
     opacity: 0.9;
 }
@@ -189,6 +190,7 @@ img{
     width: 60%;
     height: 100%;
     background-color: rgb(228, 199, 199);
+    overflow: auto;
 }
 
 .conversation_wall{
@@ -196,7 +198,6 @@ img{
     height: calc(100% - 100px);
     background-image: url(../img/mine.jpg);
     background-size: cover;
-    overflow: auto; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -361,3 +362,65 @@ img{
     font-size: 0.8rem;
     color: rgb(213, 220, 228);
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+
+    .alert_container{
+        font-size: 0.8rem;
+    }
+    .left_container{
+        width: 50%;
+    }
+    .right_container{
+        width: 50%;
+    }
+
+    .picture_box{
+        width: 50px;
+    }
+    .friend_text_box{
+        width: calc(100% - 50px);
+    }
+
+    .img{
+        width: 30px
+    }
+
+    .user_card>.friend_text_box>.left_text>p:last-child{
+        display: none;
+       }
+   .user_card>.friend_text_box>.right_text{
+    display: none;
+   }
+
+   .content-container{
+    font-size: 0.8rem
+   }
+   .small-container{
+    font-size: 0.6rem;
+   }
+   .sender-message>.small-container>p:first-child{
+    margin: 0;
+   }
+   .receiver-message>.small-container>p:first-child{
+    margin: 0;
+   }
+}
+
+@media screen and (max-width: 992px) {
+
+    .user_card{
+        margin-bottom: 1rem;
+    }
+
+    .friend_text_box{
+        width: calc(100% - 50px);
+        overflow: hidden;
+    }
+
+    .user_card>.friend_text_box>.right_text{
+        display: none;
+       }
+}
+
